@@ -13,7 +13,7 @@ Modal window code
 ```
 <div class="modal-window" id="first">
   U can open another model from model <a href="javascript:openmodal('two');">Open modal 2</a>
-<</div>
+</div>
 
 <div class="modal-window" id="two">
   Some code in modal 2
