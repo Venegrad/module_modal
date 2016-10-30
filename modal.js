@@ -65,7 +65,9 @@ $(document).ready(function () {
   });
   
   $(window).resize(function() {
-    modalresizer();
+    if ($(".modal-window.js-active").length > 0) {
+      modalresizer();
+    }
   });
   
 });
