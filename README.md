@@ -1,7 +1,7 @@
 # responsive-modal
 Responsive modal supports IE9+, Safari 7+, Chrome, Firefox ...
 
-For open modal use funtion openmodal('first'), when first is modal ID attribute
+For open modal use funсtion openmodal('first'), when first is modal ID attribute
 
 ```
 <a href="javascript:openmodal('first');">Open modal 1</a>
