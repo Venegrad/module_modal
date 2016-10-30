@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Responsive Modal</title>
+  <link rel="stylesheet" href="modal.css">
+</head>
+
+<body>
+ 
+  <!--  test styles, u can del it-->
+  <style>
+    body {
+      padding: 30px;
+      background: #ccc;
+    }
+    
+    .test-link {
+      color: #555;
+      font-family: Verdana;
+      text-decoration: none;
+      font-size: 13px;
+      display: inline-block;
+      margin-bottom: 20px;
+      margin-right: 20px;
+      background: #f7f7f7;
+      border-radius: 5px;
+      padding: 10px 20px;
+    }
+    
+    .test-link:hover {
+      background: #000;
+      color: #fff;
+    }
+    
+    #first {
+      max-width: 700px
+    }
+    
+     #two {
+      max-width: 400px
+    }
+    
+  </style>
+  <!-- / test styles, u can del it-->
+
+
+  <!--open-modal-->
+  <a href="javascript:openmodal('first');" class="test-link">Open modal 1</a>
+  <br>
+  <a href="javascript:openmodal('two');"  class="test-link">Open modal 2</a>
+
+
+  <div class="modal-window" id="first">
+    Some code in modal.<br><br>
+    U can open another model from model <a href="javascript:openmodal('two');">Open modal 2</a>
+  </div>
+
+  <div class="modal-window" id="two">
+     Some code in modal 2
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="modal.js"></script>
+</body>
+
+</html>
