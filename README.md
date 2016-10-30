@@ -3,10 +3,10 @@ Respnsive modal supports IE9+
 
 For open modal use openmodal('first'), when first is modal ID attribute
 
-<pre>
+[pre]
    <a href="javascript:openmodal('first');">Open modal 1</a>
    <a href="javascript:openmodal('two');">Open modal 2</a>
-</pre>
+[/pre]
 
 modal window code
 
