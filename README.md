@@ -21,9 +21,3 @@
   Some code in modal 2
 </div>
 ```
-
-<<<<<<< HEAD
-simple and nice modal ^^
-=======
-Все очень просто...
->>>>>>> fb48ffdb67453d56edb1b7691a954768e0f5dd8d
