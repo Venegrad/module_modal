@@ -21,3 +21,5 @@
   Some code in modal 2
 </div>
 ```
+
+Demo: https://htmlpreview.github.io/?https://github.com/Venegrad/Responsive-modal/blob/master/index.html
