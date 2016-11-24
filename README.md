@@ -5,14 +5,14 @@
 
 Для открытия окна используйте функцию openmodal('first'), где first - это ID блока модального окна
 
-```
+```html
 <a href="javascript:openmodal('first');">Open modal 1</a>
 <a href="javascript:openmodal('two');">Open modal 2</a>
 ```
 
 Код модальных окон
 
-```
+```html
 <div class="modal-window" id="first">
   U can open another model from model <a href="javascript:openmodal('two');">Open modal 2</a>
 </div>
