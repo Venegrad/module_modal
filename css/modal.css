@@ -15,8 +15,18 @@
   -webkit-box-sizing: border-box;
 }
 
-.modal-window.js-window-absolut {
-  position: absolute
+.modal-window.js-window-absolute {
+  position: absolute;
+  left: 0 !important;
+  top: 0 !important;
+  max-width: 100% !important;
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+
+body.overflow-owt {
+  overflow: hidden !important;
 }
 
 .modal-window.js-active {
