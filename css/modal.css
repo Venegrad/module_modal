@@ -15,7 +15,7 @@
   -webkit-box-sizing: border-box;
 }
 
-.modal-window.js-window-absolute {
+.modal-window.modal-window_absolute {
   position: absolute;
   left: 0 !important;
   top: 0 !important;
@@ -23,21 +23,18 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 
-body.overflow-owt {
+body.modal-window_active {
   overflow: hidden !important;
 }
 
-.modal-window.js-active {
+.modal-window.modal-window_active {
   display: block;
   z-index: 9999
 }
 
-.closemodal {
+.modal-window__close-modal {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -63,6 +60,6 @@ body.overflow-owt {
   z-index: 9000
 }
 
-.modal-shadow.js-active {
+.modal-shadow.modal-window_active {
   display: block
 }
