@@ -44,7 +44,7 @@ function closemodal() {
   $(".modal-window, .modal-shadow").animate({
     opacity: 0
   }, 500, function () {
-    $(".modal-window, .modal-shadow").removeClass("modal-window_active");
+    $(".modal-window, .modal-shadow, body").removeClass("modal-window_active");
   });
 }
 
@@ -64,6 +64,12 @@ $(document).ready(function () {
   $(window).resize(function() {
     if ($(".modal-window.modal-window_active").length > 0) {
       modalresizer();
+    }
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode == 27) {
+      closemodal();
     }
   });
   
