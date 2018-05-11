@@ -33,30 +33,26 @@ function openmodal(artic) {
     $("#" + artic).animate({
       opacity: 1
     }, 500);
-    $(".modal-shadow").addClass("modal-window_active");
-    $(".modal-shadow").animate({
-      opacity: 0.8
-    }, 500);
   }
 }
 
 function closemodal() {
-  $(".modal-window, .modal-shadow").animate({
+  $(".modal-window").animate({
     opacity: 0
   }, 500, function () {
-    $(".modal-window, .modal-shadow, body").removeClass("modal-window_active");
+    $(".modal-window, body").removeClass("modal-window_active");
   });
 }
 
 $(document).ready(function () {
   
-  $("body").prepend("<div class='modal-shadow'></div>");
-
   $(".modal-window").each(function () {
-    $(this).prepend("<a href='' class='modal-window__close-modal'></a>");
+    var getattr = $(this).attr("data-width");
+    $(this).wrapInner("<div class='modal-window__wrap' style='max-width: "+getattr+";'></div>");
+    $(this).find(".modal-window__wrap").prepend("<a href='' class='modal-window__close-modal'></a>");
   });
 
-  $("body").on("click", ".modal-window__close-modal, .modal-shadow", function (e) {
+  $("body").on("click", ".modal-window__close-modal", function (e) {
     closemodal();
     e.preventDefault();
   });
