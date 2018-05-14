@@ -23,7 +23,6 @@
   margin: auto;
 }
 
-
 body.modal-window_active {
   overflow: hidden !important;
 }
