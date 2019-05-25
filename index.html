@@ -9,6 +9,7 @@
     body {
       padding: 30px;
       background: #ccc;
+      font-family: Arial;
     }
 
     .test-link {
@@ -28,25 +29,57 @@
       background: #000;
       color: #fff;
     }
+
+    .test-fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      z-index: 5;
+    }
+    .test-fixed-nav__wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .test-fixed-nav__left {
+      font-size: 20px;
+      color: #000000;
+    }
+
   </style>
   <!-- / test styles, u can del it-->
 
-  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="modal/modal.css">
 </head>
 
 <body>
 
+  <div class="test-fixed-nav modal_padding">
+    <div class="test-fixed-nav__wrap">
+      <a href="https://venegrad.com" target="_blank" class="test-fixed-nav__left">Venegrad.com</a>
+      <div class="test-fixed-nav__left">test fixed nav</div>
+    </div>
+  </div>
 
+  <br>
+  <br>
+  <br>
+  <br>
 
-
-  <!--open-modal-->
   <a href="javascript:openmodal('#first');" class="test-link">Open modal 1</a>
-  <br>
   <a href="javascript:openmodal('#two');" class="test-link">Open modal 2</a>
-
-  <br>
   <a href="" data-modal-open="#two" class="test-link">Open modal 2 type open 2</a>
 
+  
 
   <div class="modal" id="first" data-width="500px">
     Some code in modal.<br><br>
@@ -75,12 +108,15 @@
   </div>
 
   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
   <br> <br> <br> <br> <br>
 
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="js/modal.js"></script>
+  <script src="modal/modal.js"></script>
 </body>
 
 </html>

@@ -35,7 +35,7 @@ function openmodal(artic) {
       }, speed);
     });
 
-    
+
   } else {
     $(artic).addClass("modal_active");
     $(artic).animate({
@@ -65,7 +65,7 @@ $(document).ready(function () {
   $(".modal").each(function () {
     var getattr = $(this).attr("data-width");
     $(this).wrapInner("<div class='modal__wrap' style='max-width: "+getattr+";'></div>");
-    $(this).find(".modal__wrap").prepend("<a href='' class='modal__close'></a>");
+    $(this).find(".modal__wrap").prepend("<button class='modal__close'></button>");
   });
 
   $("body").on("click", ".modal__close", function (e) {
