@@ -33,7 +33,7 @@ body.modal_active {
 
 .modal.modal_active {
   display: flex;
-  z-index: 9999
+  z-index: 20
 }
 
 .modal__close {
