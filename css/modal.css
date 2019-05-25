@@ -1,4 +1,4 @@
-.modal-window {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@
   padding: 25px;
 }
 
-.modal-window .modal-window__wrap {
+.modal .modal__wrap {
   background: #fff;
   padding: 25px;
   position: relative;
@@ -23,16 +23,16 @@
   margin: auto;
 }
 
-body.modal-window_active {
+body.modal_active {
   overflow: hidden !important;
 }
 
-.modal-window.modal-window_active {
+.modal.modal_active {
   display: flex;
   z-index: 9999
 }
 
-.modal-window__close-modal {
+.modal__close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -45,7 +45,7 @@ body.modal-window_active {
 
 
 @media (max-width: 500px) {
-  .modal-window {
+  .modal {
     padding: 10px;
   }
 }

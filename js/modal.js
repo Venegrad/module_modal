@@ -1,42 +1,74 @@
+var speed = 250;
+
+function getScrollbarWidth() {
+  var outer = document.createElement("div");
+  outer.style.visibility = "hidden";
+  outer.style.width = "100px";
+  outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+  document.body.appendChild(outer);
+  var widthNoScroll = outer.offsetWidth;
+  outer.style.overflow = "scroll";
+  var inner = document.createElement("div");
+  inner.style.width = "100%";
+  outer.appendChild(inner);        
+  var widthWithScroll = inner.offsetWidth;
+  outer.parentNode.removeChild(outer);
+  return widthNoScroll - widthWithScroll;
+}
+
 
 function openmodal(artic) {
-  $("body").addClass("modal-window_active");
-  if ($(".modal-window.modal-window_active").length > 0) {
-    $(".modal-window.modal-window_active").animate({
-      opacity: 0
-    }, 500, function () {
-      $(".modal-window.modal-window_active").removeClass("modal-window_active modal-window_absolute");
-      $("#" + artic).addClass("modal-window_active");
+  $("body").addClass("modal_active").css({"margin-right": getScrollbarWidth()});
+  $(".modal_padding").css({"padding-right": getScrollbarWidth()});
 
-      $("#" + artic).animate({
+
+  if ($(".modal.modal_active").length > 0) {
+    
+    $(".modal.modal_active").animate({
+      opacity: 0
+    }, speed, function () {
+      $(".modal.modal_active").removeClass("modal_active modal_absolute");
+      $(artic).addClass("modal_active");
+
+      $(artic).animate({
         opacity: 1
-      }, 500);
+      }, speed);
     });
+
+    
   } else {
-    $("#" + artic).addClass("modal-window_active");
-    $("#" + artic).animate({
+    $(artic).addClass("modal_active");
+    $(artic).animate({
       opacity: 1
-    }, 500);
+    }, speed);
   }
 }
 
 function closemodal() {
-  $(".modal-window").animate({
+  $(".modal").animate({
     opacity: 0
-  }, 500, function () {
-    $(".modal-window, body").removeClass("modal-window_active");
+  }, speed, function () {
+    $(".modal, body").removeClass("modal_active");
+    $("body").css({"margin-right" : "0px"});
+    $(".modal_padding").removeAttr("style");
   });
 }
 
 $(document).ready(function () {
+
+  $("body").on("click", "[data-modal-open]", function(e) {
+    var getAttr = $(this).attr("data-modal-open");
+    openmodal(getAttr);
+    e.preventDefault();
+  });
   
-  $(".modal-window").each(function () {
+  $(".modal").each(function () {
     var getattr = $(this).attr("data-width");
-    $(this).wrapInner("<div class='modal-window__wrap' style='max-width: "+getattr+";'></div>");
-    $(this).find(".modal-window__wrap").prepend("<a href='' class='modal-window__close-modal'></a>");
+    $(this).wrapInner("<div class='modal__wrap' style='max-width: "+getattr+";'></div>");
+    $(this).find(".modal__wrap").prepend("<a href='' class='modal__close'></a>");
   });
 
-  $("body").on("click", ".modal-window__close-modal", function (e) {
+  $("body").on("click", ".modal__close", function (e) {
     closemodal();
     e.preventDefault();
   });
